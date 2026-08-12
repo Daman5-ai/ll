@@ -38,12 +38,14 @@ export const education = [
     institute: "Omkar Cambridge International School",
     year: "2025",
     status: "Completed",
+    note: "",
   },
   {
     degree: "X (IGCSE)",
     institute: "Ira Global School",
     year: "2023",
     status: "Completed",
+    note: "",
   },
 ] as const;
 
