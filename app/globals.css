@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+  .dark {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-paper text-ink dark:bg-ink dark:text-paper font-body antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* Accessible, visible focus states everywhere — accessibility-first per brief */
+  :focus-visible {
+    @apply outline-none ring-2 ring-signal ring-offset-2 ring-offset-paper dark:ring-offset-ink;
+  }
+
+  ::selection {
+    @apply bg-amber/30;
+  }
+
+  /* Respect reduced-motion preference: kill non-essential animation */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  /* Subtle spreadsheet-grid texture used behind the hero and section dividers.
+     This is the site's structural signature — see README Design System. */
+  .bg-ledger-grid {
+    background-image: theme("backgroundImage.grid-light");
+    background-size: theme("backgroundSize.grid");
+  }
+  .dark .bg-ledger-grid {
+    background-image: theme("backgroundImage.grid-dark");
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
