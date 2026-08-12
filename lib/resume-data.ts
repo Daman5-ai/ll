@@ -101,6 +101,7 @@ export const achievements = [
   {
     title: "Bronze Medal — District-Level Running Competition",
     category: "Sports",
+    description: "",
   },
   {
     title: "School & district-level running competitions",
@@ -110,6 +111,7 @@ export const achievements = [
   {
     title: "Swimming competitions and sports activities",
     category: "Sports",
+    description: "",
   },
   {
     title: "School events and competitions",
